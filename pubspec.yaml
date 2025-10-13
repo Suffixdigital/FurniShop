@@ -1,0 +1,65 @@
+name: timberr
+description: A furniture shopping app made using Flutter, Firebase and Getx state management.
+
+publish_to: 'none'
+
+version: 2.0.0+2
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get: ^4.7.2
+  supabase_flutter: ^2.10.1
+  flutter_svg: ^2.2.1
+  cached_network_image: ^3.4.1
+  lottie: ^3.3.2
+  url_launcher: ^6.3.2
+  image_picker: ^1.2.0
+  razorpay_flutter: ^1.4.0
+  win32: ^5.14.0
+  flutter_plugin_android_lifecycle: ^2.0.30
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+  - assets/
+  - assets/icons/
+  - assets/lottie/
+  - assets/fonts/
+
+  fonts:
+  - family: NunitoSans
+    fonts:
+      - asset: assets/fonts/NunitoSans_Regular.ttf
+      - asset: assets/fonts/NunitoSans_Light.ttf
+        weight: 300
+      - asset: assets/fonts/NunitoSans_SemiBold.ttf
+        weight: 600
+      - asset: assets/fonts/NunitoSans_Bold.ttf
+        weight: 700
+      - asset: assets/fonts/NunitoSans_ExtraBold.ttf
+        weight: 800
+
+  - family: Gelasio
+    fonts:
+      - asset: assets/fonts/Gelasio_Regular.ttf
+      - asset: assets/fonts/Gelasio_Medium.ttf
+        weight: 500
+      - asset: assets/fonts/Gelasio_SemiBold.ttf
+        weight: 600
+      - asset: assets/fonts/Gelasio_Bold.ttf
+        weight: 700
+
+  - family: Merriweather
+    fonts:
+      - asset: assets/fonts/Merriweather_Regular.ttf
+      - asset: assets/fonts/Merriweather_Bold.ttf
+        weight: 700
