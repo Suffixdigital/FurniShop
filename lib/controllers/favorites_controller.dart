@@ -7,25 +7,29 @@ class FavoritesController extends GetxController {
   final _supabaseClient = Supabase.instance.client;
 
   Future<void> fetchFavorites() async {
-    final response = await _supabaseClient
-        .from("Users")
-        .select()
-        .eq("Uid", _supabaseClient.auth.currentUser!.id);
-    List responseList = response[0]['favoritesList'];
-    for (int i = 0; i < responseList.length; i++) {
-      final productResponse = await _supabaseClient
-          .from('Products')
-          .select()
-          .eq("product_id", responseList[i]);
-      favoritesList.add(Product.fromJson(productResponse[0]));
+    final userId = _supabaseClient.auth.currentUser?.id;
+    if (userId == null) return;
+
+    final response = await _supabaseClient.from("users").select("favoriteslist").eq("user_id", userId).maybeSingle();
+
+    // Safely extract favoritesList
+    final List<dynamic> favoriteIds = (response?['favoriteslist'] as List?) ?? [];
+
+    favoritesList.clear();
+
+    for (final productId in favoriteIds) {
+      final productResponse = await _supabaseClient.from('products').select().eq("product_id", productId).maybeSingle();
+
+      if (productResponse != null) {
+        favoritesList.add(Product.fromJson(productResponse));
+      }
     }
   }
 
   Future<void> updateDatabase() async {
-    await _supabaseClient.from('Users').update({
-      'favoritesList':
-          favoritesList.map((favoriteItem) => favoriteItem.productId).toList()
-    }).eq("Uid", _supabaseClient.auth.currentUser!.id);
+    await _supabaseClient
+        .from('users')
+        .update({'favoriteslist': favoritesList.map((favoriteItem) => favoriteItem.productId).toList()}).eq("user_id", _supabaseClient.auth.currentUser!.id);
   }
 
   Future<void> addProduct(Product product) async {

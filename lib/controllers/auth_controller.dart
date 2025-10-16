@@ -9,8 +9,7 @@ class AuthController extends GetxController {
 
   Future signIn(String email, String password) async {
     try {
-      await _supabaseInstance.auth
-          .signInWithPassword(email: email, password: password);
+      await _supabaseInstance.auth.signInWithPassword(email: email, password: password);
       // Sign in with success
       Get.offAll(() => const Wrapper());
     } on AuthException catch (error) {
@@ -22,15 +21,14 @@ class AuthController extends GetxController {
 
   Future signUp(String name, String email, String password) async {
     try {
-      final response =
-          await _supabaseInstance.auth.signUp(password: password, email: email);
+      final response = await _supabaseInstance.auth.signUp(password: password, email: email);
       if (response.session != null) {
-        await _supabaseInstance.from('Users').insert({
-          'Name': name,
-          'Email': email,
-          'Uid': response.session?.user.id,
-          'favoritesList': [],
-          'cartList': [],
+        await _supabaseInstance.from('users').insert({
+          'name': name,
+          'email': email,
+          'user_id': response.session?.user.id,
+          'favoriteslist': [],
+          'cartlist': [],
         });
         Get.offAll(() => const Wrapper());
       }
@@ -43,7 +41,6 @@ class AuthController extends GetxController {
 
   Future forgotPassword(String email) async {
     await _supabaseInstance.auth.resetPasswordForEmail(email);
-    Get.snackbar("Password reset",
-        "Password reset request has been sent to your email successfully.");
+    Get.snackbar("Password reset", "Password reset request has been sent to your email successfully.");
   }
 }

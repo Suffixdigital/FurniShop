@@ -35,17 +35,17 @@ class AddShippingScreen extends StatelessWidget {
     }
   }
 
-  void _pincodeOnChanged(String val) {
-    _addressController.pincode = int.parse(val);
+  void zipcodeOnChanged(String val) {
+    _addressController.zipcode = val;
   }
 
-  String? _pincodeValidator(String? val) {
+  String? zipcodeValidator(String? val) {
     if (val?.isEmpty ?? true) {
-      return "Please enter your pincode";
+      return "Please enter your zipcode";
     } else if (!val!.isNum) {
-      return "Please enter a valid pincode";
+      return "Please enter a valid zipcode";
     } else if (val.length != 6) {
-      return "Pincode must be 6 characters long";
+      return "Zipcode must be 6 characters long";
     } else {
       return null;
     }
@@ -68,7 +68,7 @@ class AddShippingScreen extends StatelessWidget {
   }
 
   void _districtOnChanged(String val) {
-    _addressController.district = val;
+    _addressController.state = val;
   }
 
   String? _districtValidator(val) {
@@ -132,8 +132,8 @@ class AddShippingScreen extends StatelessWidget {
                   hintText: "Ex: 600014",
                   maxLength: 6,
                   textInputAction: TextInputAction.done,
-                  onChanged: _pincodeOnChanged,
-                  validator: _pincodeValidator,
+                  onChanged: zipcodeOnChanged,
+                  validator: zipcodeValidator,
                 ),
                 CustomDropdownBox(
                   headerText: "Country",

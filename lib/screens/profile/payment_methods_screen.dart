@@ -67,19 +67,11 @@ class PaymentMethodsScreen extends StatelessWidget {
               return Column(
                 children: [
                   PaymentCardView(
-                    cardHolderName: _cardDetailsController.cardDetailList
-                        .elementAt(index)
-                        .name,
-                    lastFourDigits: _cardDetailsController.cardDetailList
-                        .elementAt(index)
-                        .cardNumber
-                        .toString()
-                        .substring(12),
-                    expiryDateString:
-                        "${_cardDetailsController.cardDetailList.elementAt(index).month}/${_cardDetailsController.cardDetailList.elementAt(index).year}",
+                    cardHolderName: _cardDetailsController.cardDetailList.elementAt(index).name,
+                    lastFourDigits: _cardDetailsController.cardDetailList.elementAt(index).cardNumber.toString().substring(12),
+                    expiryDateString: _cardDetailsController.cardDetailList.elementAt(index).expirationDate,
                     isMasterCard: index % 2 == 0,
-                    isSelected:
-                        _cardDetailsController.selectedIndex.value == index,
+                    isSelected: _cardDetailsController.selectedIndex.value == index,
                   ),
                   const SizedBox(height: 10),
                   Row(
@@ -88,10 +80,7 @@ class PaymentMethodsScreen extends StatelessWidget {
                       SizedBox(
                         height: 20,
                         child: Checkbox(
-                          value: (_cardDetailsController.selectedIndex.value ==
-                                  index)
-                              ? true
-                              : false,
+                          value: (_cardDetailsController.selectedIndex.value == index) ? true : false,
                           onChanged: (isSelected) {
                             _cardDetailsController.setDefaultCardDetail(index);
                           },
@@ -100,8 +89,7 @@ class PaymentMethodsScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(4),
                           ),
                           splashRadius: 20,
-                          materialTapTargetSize:
-                              MaterialTapTargetSize.shrinkWrap,
+                          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         ),
                       ),
                       Text(

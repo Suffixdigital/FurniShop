@@ -1,21 +1,16 @@
 class CardDetail {
-  int id;
+  int paymentId;
   String name;
-  int cardNumber;
-  int month;
-  int year;
-  CardDetail(
-      {required this.id,
-      required this.name,
-      required this.cardNumber,
-      required this.month,
-      required this.year});
+  String cardNumber;
+  int cvv;
+  String expirationDate;
+  CardDetail({required this.paymentId, required this.name, required this.cardNumber, required this.cvv, required this.expirationDate});
   factory CardDetail.fromJson(Map<String, dynamic> json) {
     return CardDetail(
-        id: json['id'],
+        paymentId: json['payment_id'],
         name: json['cardholder_name'],
         cardNumber: json['card_number'],
-        month: json['month'],
-        year: json['year']);
+        cvv: json['cvv'],
+        expirationDate: json['expiration_date']);
   }
 }

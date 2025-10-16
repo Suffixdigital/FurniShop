@@ -8,23 +8,36 @@ class Product {
   final int categoryId;
   late final List<Color> colorsList;
   final List<String> imagesList;
-  Product(this.productId, this.name, this.price, this.description,
-      this.categoryId, List<String> colorsStringList, this.imagesList) {
-    colorsList = colorsStringList
-        .map((colorString) => colorFromString(colorString))
-        .toList();
+
+  Product(this.productId, this.name, this.price, this.description, this.categoryId, List<String> colorsStringList, this.imagesList) {
+    colorsList = colorsStringList.map((colorString) => colorFromString(colorString)).toList();
   }
 
   factory Product.fromJson(Map<String, dynamic> json) {
-    return Product(
+    /*return Product(
         json['product_id'],
         json['name'],
         json['price'],
         json['description'],
         json['categoryId'],
-        json['colorsList'].cast<String>(),
-        json['imagesList'].cast<String>());
+        (json['colorsList'] as List?)?.cast<String>() ?? [],
+        (json['imagesList'] as List?)?.cast<String>() ?? []
+    );*/
+    // Handle lowercase or camelCase keys safely
+    final colorStrings = (json['colorsList'] ?? json['colorslist'] ?? []) as List<dynamic>;
+    final imageStrings = (json['imagesList'] ?? json['imageslist'] ?? []) as List<dynamic>;
+
+    return Product(
+      json['product_id'] ?? 0,
+      json['name'] ?? '',
+      json['price'],
+      json['description'] ?? '',
+      json['categoryId'] ?? json['categoryid'] ?? 0,
+      colorStrings.map((colorName) => colorName.toString()).toList(),
+      imageStrings.map((img) => img.toString()).toList(),
+    );
   }
+
   Map<String, dynamic> toJson() {
     return {
       'product_id': productId,

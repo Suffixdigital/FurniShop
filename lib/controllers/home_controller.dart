@@ -8,6 +8,7 @@ class HomeController extends GetxController {
   var productsList = <Product>[].obs;
 
   Future<void> changeCategory(int categoryId) async {
+    print("HomeController: selectedCategory: $selectedCategory categoryID: $categoryId");
     if (selectedCategory.value == categoryId) return;
     selectedCategory.value = categoryId;
     await getProducts(categoryId);
@@ -15,14 +16,10 @@ class HomeController extends GetxController {
 
   Future<void> getProducts(int categoryId) async {
     final response = (categoryId == 0)
-        ? await _supabaseInstance.client.from('Products').select()
-        : await _supabaseInstance.client
-            .from('Products')
-            .select()
-            .eq('categoryId', categoryId);
+        ? await _supabaseInstance.client.from('products').select()
+        : await _supabaseInstance.client.from('products').select().eq('categoryId', categoryId);
     List responseList = response;
-    productsList.value = responseList
-        .map((productResponse) => Product.fromJson(productResponse))
-        .toList();
+    // print("product response: ${responseList.first}");
+    productsList.value = responseList.map((productResponse) => Product.fromJson(productResponse)).toList();
   }
 }

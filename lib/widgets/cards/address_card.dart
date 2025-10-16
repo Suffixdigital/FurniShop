@@ -9,11 +9,7 @@ class AddressCard extends StatelessWidget {
   final Address address;
   final int index;
   final bool isEditable;
-  const AddressCard(
-      {super.key,
-      this.isEditable = true,
-      required this.address,
-      required this.index});
+  const AddressCard({super.key, this.isEditable = true, required this.address, required this.index});
 
   void _onEditTap() {
     Get.to(
@@ -52,7 +48,7 @@ class AddressCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  address.name,
+                  address.fullName,
                   style: kNunitoSansBold18,
                 ),
                 if (isEditable)

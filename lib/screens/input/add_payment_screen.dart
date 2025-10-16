@@ -8,8 +8,10 @@ import 'package:timberr/widgets/input/custom_input_box.dart';
 
 class AddPaymentScreen extends StatelessWidget {
   AddPaymentScreen({super.key});
+
   final _formKey = GlobalKey<FormState>();
   final _controller = Get.put(AddPaymentController());
+
   void _addCard() {
     if (_formKey.currentState?.validate() ?? false) {
       _controller.addCardDetail();
@@ -21,7 +23,7 @@ class AddPaymentScreen extends StatelessWidget {
   }
 
   void _cardNumberOnChanged(String val) {
-    _controller.cardNumber = int.parse(val.replaceAll(" ", ""));
+    _controller.cardNumber = val.replaceAll(" ", "");
     if (val.length >= 16) {
       _controller.lastFourDigits.value = val.substring(15);
     } else {
@@ -46,9 +48,7 @@ class AddPaymentScreen extends StatelessWidget {
   }
 
   String? _cardNumberValidator(String? val) {
-    return (val != null && val.length == 20)
-        ? null
-        : "Enter a Valid Credit Card Number";
+    return (val != null && val.length == 20) ? null : "Enter a Valid Credit Card Number";
   }
 
   String? _cvvValidator(String? val) {
@@ -56,11 +56,7 @@ class AddPaymentScreen extends StatelessWidget {
   }
 
   String? _dateValidator(String? val) {
-    return (_controller.month > 0 &&
-            _controller.month < 13 &&
-            _controller.year > 21)
-        ? null
-        : "Enter a Valid Date";
+    return (_controller.month > 0 && _controller.month < 13 && _controller.year > 21) ? null : "Enter a Valid Date";
   }
 
   @override
@@ -97,15 +93,9 @@ class AddPaymentScreen extends StatelessWidget {
                 Obx(
                   () {
                     return PaymentCardView(
-                      cardHolderName: (_controller.name.isEmpty)
-                          ? "XXXXXX"
-                          : _controller.name.value,
-                      expiryDateString: (_controller.dateString.isEmpty)
-                          ? "XX/XX"
-                          : _controller.dateString.value,
-                      lastFourDigits: (_controller.lastFourDigits.isEmpty)
-                          ? "XXXX"
-                          : _controller.lastFourDigits.value,
+                      cardHolderName: (_controller.name.isEmpty) ? "XXXXXX" : _controller.name.value,
+                      expiryDateString: (_controller.dateString.isEmpty) ? "XX/XX" : _controller.dateString.value,
+                      lastFourDigits: (_controller.lastFourDigits.isEmpty) ? "XXXX" : _controller.lastFourDigits.value,
                     );
                   },
                 ),

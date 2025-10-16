@@ -12,7 +12,7 @@ import 'package:timberr/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const TimberrApp());
 
     expect(find.text('0'), findsOneWidget);
     expect(find.text('1'), findsNothing);

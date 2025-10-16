@@ -1,44 +1,36 @@
 class Address {
-  late int id;
-  String name;
+  late int addressId;
+  String fullName;
   String address;
-  int pincode;
+  String zipcode;
   String country;
   String city;
-  String district;
+  String state;
   Address({
-    required this.id,
-    required this.name,
+    required this.addressId,
+    required this.fullName,
     required this.address,
-    required this.pincode,
+    required this.zipcode,
     required this.country,
     required this.city,
-    required this.district,
+    required this.state,
   });
   factory Address.fromJson(Map<String, dynamic> json) {
     return Address(
-      id: json['id'],
-      name: json['full_name'],
+      addressId: json['address_id'],
+      fullName: json['full_name'],
       address: json['address'],
-      pincode: json['pincode'],
+      zipcode: json['zipcode'],
       country: json['country'],
       city: json['city'],
-      district: json['district'],
+      state: json['state'],
     );
   }
   String displayAddress() {
-    return "$address, $district, $city, $pincode";
+    return "$address, $city, $state,$zipcode";
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      "id": id,
-      "full_name": name,
-      "address": address,
-      "pincode": pincode,
-      "country": country,
-      "city": city,
-      "district": district
-    };
+    return {"address_id": addressId, "full_name": fullName, "address": address, "zipcode": zipcode, "country": country, "city": city, "state": state};
   }
 }

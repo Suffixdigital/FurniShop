@@ -34,8 +34,7 @@ class Home extends StatelessWidget {
             SliverAppBar(
               leading: IconButton(
                 onPressed: () {
-                  showSearch(
-                      context: context, delegate: ProductSearchDelegate());
+                  showSearch(context: context, delegate: ProductSearchDelegate());
                 },
                 icon: SvgPicture.asset(
                   'assets/icons/search_icon_grey.svg',
@@ -67,9 +66,7 @@ class Home extends StatelessWidget {
                   ),
                 )
               ],
-              bottom: PreferredSize(
-                  preferredSize: const Size(double.infinity, 65),
-                  child: CategoryTabBar()),
+              bottom: PreferredSize(preferredSize: const Size(double.infinity, 65), child: CategoryTabBar()),
               floating: true,
               snap: true,
             ),

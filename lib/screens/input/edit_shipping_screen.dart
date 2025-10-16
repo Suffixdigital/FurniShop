@@ -13,14 +13,13 @@ class EditShippingScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final AddressController _addressController = Get.find();
 
-  EditShippingScreen(
-      {super.key, required this.initialAddress, required this.index}) {
-    _addressController.name = initialAddress.name;
+  EditShippingScreen({super.key, required this.initialAddress, required this.index}) {
+    _addressController.name = initialAddress.fullName;
     _addressController.address = initialAddress.address;
-    _addressController.pincode = initialAddress.pincode;
+    _addressController.zipcode = initialAddress.zipcode;
     _addressController.country = initialAddress.country;
     _addressController.city = initialAddress.city;
-    _addressController.district = initialAddress.district;
+    _addressController.state = initialAddress.state;
   }
 
   void _nameOnChanged(String val) {
@@ -47,17 +46,17 @@ class EditShippingScreen extends StatelessWidget {
     }
   }
 
-  void _pincodeOnChanged(String val) {
-    _addressController.pincode = int.parse(val);
+  void zipcodeOnChanged(String val) {
+    _addressController.zipcode = val;
   }
 
-  String? _pincodeValidator(String? val) {
+  String? zipcodeValidator(String? val) {
     if (val?.isEmpty ?? true) {
-      return "Please enter your pincode";
+      return "Please enter your zipcode";
     } else if (!val!.isNum) {
-      return "Please enter a valid pincode";
+      return "Please enter a valid zipcode";
     } else if (val.length != 6) {
-      return "Pincode must be 6 characters long";
+      return "Zipcode must be 6 characters long";
     } else {
       return null;
     }
@@ -80,7 +79,7 @@ class EditShippingScreen extends StatelessWidget {
   }
 
   void _districtOnChanged(String val) {
-    _addressController.district = val;
+    _addressController.state = val;
   }
 
   String? _districtValidator(val) {
@@ -89,7 +88,7 @@ class EditShippingScreen extends StatelessWidget {
 
   void _editAddress() {
     if (_formKey.currentState!.validate()) {
-      _addressController.editAddress(index, initialAddress.id);
+      _addressController.editAddress(index, initialAddress.addressId);
     }
   }
 
@@ -133,7 +132,7 @@ class EditShippingScreen extends StatelessWidget {
                   headerText: "Full name",
                   hintText: "Ex: Aditya R",
                   textInputType: TextInputType.name,
-                  initialValue: initialAddress.name,
+                  initialValue: initialAddress.fullName,
                   onChanged: _nameOnChanged,
                   validator: _nameValidator,
                 ),
@@ -149,9 +148,9 @@ class EditShippingScreen extends StatelessWidget {
                   headerText: "Zipcode (Postal Code)",
                   hintText: "Ex: 600014",
                   textInputAction: TextInputAction.done,
-                  initialValue: initialAddress.pincode.toString(),
-                  onChanged: _pincodeOnChanged,
-                  validator: _pincodeValidator,
+                  initialValue: initialAddress.zipcode.toString(),
+                  onChanged: zipcodeOnChanged,
+                  validator: zipcodeValidator,
                 ),
                 CustomDropdownBox(
                   headerText: "Country",
@@ -182,7 +181,7 @@ class EditShippingScreen extends StatelessWidget {
                 CustomDropdownBox(
                   headerText: "District",
                   hintText: "Select District",
-                  initialValue: initialAddress.district,
+                  initialValue: initialAddress.state,
                   items: const [
                     DropdownMenuItem(
                       value: "Mylapore",

@@ -37,8 +37,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child:
-            LottieBuilder.asset("assets/lottie/splash_loading_animation.json"),
+        child: LottieBuilder.asset("assets/lottie/splash_loading_animation.json"),
       ),
     );
   }
