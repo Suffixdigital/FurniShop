@@ -1,30 +1,30 @@
-#  🛌 Flutter Furniture App (FurniShop) 🪑
+# Flutter Furniture App (FurniShop) 
 
 FurniShop is a robust and feature-rich furniture application clone meticulously crafted using Flutter, Supabase, and Getx State Management. This app seamlessly integrates a sophisticated UI design to provide users with an immersive and intuitive furniture shopping experience.
 
-## ✨ Key Features:
+##  Key Features:
 
-- 🔐 Authentication: FurniShop ensures a secure and personalized experience with a robust authentication system, allowing users to create accounts, log in securely, and manage their profiles effortlessly.
+-  Authentication: FurniShop ensures a secure and personalized experience with a robust authentication system, allowing users to create accounts, log in securely, and manage their profiles effortlessly.
 
-- 🛒 Cart: The app features a fully functional shopping cart, enabling users to add, remove, and manage items with ease. The cart ensures a smooth and efficient checkout process for a seamless shopping journey.
+-  Cart: The app features a fully functional shopping cart, enabling users to add, remove, and manage items with ease. The cart ensures a smooth and efficient checkout process for a seamless shopping journey.
 
-- 💖 Favorites: FurniShop incorporates a favorites section, allowing users to curate a personalized list of preferred items. This feature enhances user engagement by providing a quick and convenient way to revisit and purchase favored products.
+-  Favorites: FurniShop incorporates a favorites section, allowing users to curate a personalized list of preferred items. This feature enhances user engagement by providing a quick and convenient way to revisit and purchase favored products.
 
-- 🗺️ Address: Users can effortlessly manage their delivery addresses, ensuring a hassle-free and customized shopping experience. The address feature enhances convenience by enabling users to save and update their preferred delivery locations.
+-  Address: Users can effortlessly manage their delivery addresses, ensuring a hassle-free and customized shopping experience. The address feature enhances convenience by enabling users to save and update their preferred delivery locations.
 
-- 🔍 Search and Filtering: FurniShop integrates a powerful search functionality and advanced filtering options, facilitating users in discovering desired furniture items efficiently.
+-  Search and Filtering: FurniShop integrates a powerful search functionality and advanced filtering options, facilitating users in discovering desired furniture items efficiently.
 
-- 🌈 Select Color: Users can customize their furniture selection by choosing from a variety of colors, adding a touch of personalization to their shopping experience.
+-  Select Color: Users can customize their furniture selection by choosing from a variety of colors, adding a touch of personalization to their shopping experience.
 
-- 💳 Payment Methods: The app supports multiple payment methods, ensuring a secure and versatile checkout process for users. This feature includes integration with the Razorpay payment gateway for a seamless and reliable transaction experience.
+-  Payment Methods: The app supports multiple payment methods, ensuring a secure and versatile checkout process for users. This feature includes integration with the Razorpay payment gateway for a seamless and reliable transaction experience.
 
-- 👤 User Profile Management: FurniShop empowers users to personalize their profiles by enabling them to change profile pictures, update names, passwords, and other user-related settings, enhancing the overall user experience.
+-  User Profile Management: FurniShop empowers users to personalize their profiles by enabling them to change profile pictures, update names, passwords, and other user-related settings, enhancing the overall user experience.
 
-- 💫 Smooth Animations: The app incorporates smooth and visually appealing animations, enhancing the overall user interface and providing a delightful interaction experience.
+-  Smooth Animations: The app incorporates smooth and visually appealing animations, enhancing the overall user interface and providing a delightful interaction experience.
 
-- 🚧 Reviews, Orders, and Notifications: While currently implemented as UI elements, FurniShop sets the foundation for future functionality, allowing users to access and view product reviews, order history, and notifications – enhancing user engagement and information accessibility.
+-  Reviews, Orders, and Notifications: While currently implemented as UI elements, FurniShop sets the foundation for future functionality, allowing users to access and view product reviews, order history, and notifications – enhancing user engagement and information accessibility.
 
-## 📸 Screen Recordings
+##  Screen Recordings
 
 <details>
 <summary><b>Authentication</b></summary>
@@ -84,11 +84,11 @@ FurniShop is a robust and feature-rich furniture application clone meticulously 
 <img alt="Sign out" loading="lazy" src="images/sign_out.gif" height="587px" width="256px"/>
 </details><br>
 
-## 🗃️ Database Schema
+##  Database Schema
 
 <img src="images/database.png">
 
-## 🔌 Plugins
+##  Plugins
 
 | Name                                                                      | Usage                                            |
 |---------------------------------------------------------------------------|--------------------------------------------------|
@@ -101,7 +101,7 @@ FurniShop is a robust and feature-rich furniture application clone meticulously 
 | [**razorpay_flutter**](https://pub.dev/packages/razorpay_flutter)         | Payment Gateway through Razorpay                 |
 | [**flutter_lints**](https://pub.dev/packages/flutter_lints)               | For linting                                      |
 
-## 📃 Feature Todo List
+##  Feature Todo List
 
 - [x] Authentication
 - [x] Cart
@@ -123,6 +123,6 @@ FurniShop is a robust and feature-rich furniture application clone meticulously 
 - [ ] Dark Mode
 - [ ] Responsive Design (Only Mobile version implemented)
 
-## 🔖 LICENCE
+##  LICENCE
 Copyright (c) 2022 Suffix Digital
 [MIT LICENCE](https://github.com/adeeteya/FlutterFurnitureApp/blob/master/LICENSE)
