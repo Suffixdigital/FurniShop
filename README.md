@@ -1,36 +1,28 @@
-#  🛌 Flutter Furniture App (Timberr) 🪑
+#  🛌 Flutter Furniture App (FurniShop) 🪑
 
-Timberr is a robust and feature-rich furniture application clone meticulously crafted using Flutter, Supabase, and Getx State Management. This app seamlessly integrates a sophisticated UI design to provide users with an immersive and intuitive furniture shopping experience.
-
-This app is based on this [UI Design](https://www.figma.com/file/dTdGEtZoQd2uRZc8qS5xjr/Timberr?node-id=0%3A1).
+FurniShop is a robust and feature-rich furniture application clone meticulously crafted using Flutter, Supabase, and Getx State Management. This app seamlessly integrates a sophisticated UI design to provide users with an immersive and intuitive furniture shopping experience.
 
 ## ✨ Key Features:
 
-- 🔐 Authentication: Timberr ensures a secure and personalized experience with a robust authentication system, allowing users to create accounts, log in securely, and manage their profiles effortlessly.
+- 🔐 Authentication: FurniShop ensures a secure and personalized experience with a robust authentication system, allowing users to create accounts, log in securely, and manage their profiles effortlessly.
 
 - 🛒 Cart: The app features a fully functional shopping cart, enabling users to add, remove, and manage items with ease. The cart ensures a smooth and efficient checkout process for a seamless shopping journey.
 
-- 💖 Favorites: Timberr incorporates a favorites section, allowing users to curate a personalized list of preferred items. This feature enhances user engagement by providing a quick and convenient way to revisit and purchase favored products.
+- 💖 Favorites: FurniShop incorporates a favorites section, allowing users to curate a personalized list of preferred items. This feature enhances user engagement by providing a quick and convenient way to revisit and purchase favored products.
 
 - 🗺️ Address: Users can effortlessly manage their delivery addresses, ensuring a hassle-free and customized shopping experience. The address feature enhances convenience by enabling users to save and update their preferred delivery locations.
 
-- 🔍 Search and Filtering: Timberr integrates a powerful search functionality and advanced filtering options, facilitating users in discovering desired furniture items efficiently.
+- 🔍 Search and Filtering: FurniShop integrates a powerful search functionality and advanced filtering options, facilitating users in discovering desired furniture items efficiently.
 
 - 🌈 Select Color: Users can customize their furniture selection by choosing from a variety of colors, adding a touch of personalization to their shopping experience.
 
 - 💳 Payment Methods: The app supports multiple payment methods, ensuring a secure and versatile checkout process for users. This feature includes integration with the Razorpay payment gateway for a seamless and reliable transaction experience.
 
-- 👤 User Profile Management: Timberr empowers users to personalize their profiles by enabling them to change profile pictures, update names, passwords, and other user-related settings, enhancing the overall user experience.
+- 👤 User Profile Management: FurniShop empowers users to personalize their profiles by enabling them to change profile pictures, update names, passwords, and other user-related settings, enhancing the overall user experience.
 
 - 💫 Smooth Animations: The app incorporates smooth and visually appealing animations, enhancing the overall user interface and providing a delightful interaction experience.
 
-- 🚧 Reviews, Orders, and Notifications: While currently implemented as UI elements, Timberr sets the foundation for future functionality, allowing users to access and view product reviews, order history, and notifications – enhancing user engagement and information accessibility.
-
-## 💻 Installation links
-
-[![Download Android Apk](https://img.shields.io/badge/Download-Android%20Apk-green)](https://github.com/adeeteya/FlutterFurnitureApp/releases/download/2.0.0/timberr-2.0.0.apk)
-
-[![Download iOS ipa](https://img.shields.io/badge/Download-iOS%20App-black)](https://github.com/adeeteya/FlutterFurnitureApp/releases/download/1.0.0/timberr-1.0.0.ipa)
+- 🚧 Reviews, Orders, and Notifications: While currently implemented as UI elements, FurniShop sets the foundation for future functionality, allowing users to access and view product reviews, order history, and notifications – enhancing user engagement and information accessibility.
 
 ## 📸 Screen Recordings
 
@@ -130,10 +122,6 @@ This app is based on this [UI Design](https://www.figma.com/file/dTdGEtZoQd2uRZc
 - [ ] Notifications (Only UI implemented)
 - [ ] Dark Mode
 - [ ] Responsive Design (Only Mobile version implemented)
-
-## 🤓 Author
-
-**[Aditya R](https://github.com/adeeteya)**
 
 ## 🔖 LICENCE
 Copyright (c) 2022 Aditya R
