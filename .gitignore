@@ -30,7 +30,7 @@ lib/private_keys.dart
 .packages
 .pub-cache/
 .pub/
-#/build/
+/build/
 
 # Web related
 

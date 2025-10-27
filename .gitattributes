@@ -1,0 +1,12 @@
+# Tell GitHub Linguist to treat these directories as generated (ignore them)
+build/* linguist-vendored
+**/build/** linguist-vendored
+**/node_modules/** linguist-vendored
+**/ios/** linguist-vendored
+**/android/** linguist-vendored
+**/*.js linguist-vendored
+**/*.html linguist-vendored
+**/*.css linguist-vendored
+
+# Explicitly mark Dart files as main language
+*.dart linguist-language=Dart
