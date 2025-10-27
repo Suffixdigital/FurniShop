@@ -124,5 +124,5 @@ FurniShop is a robust and feature-rich furniture application clone meticulously 
 - [ ] Responsive Design (Only Mobile version implemented)
 
 ## 🔖 LICENCE
-Copyright (c) 2022 Aditya R
+Copyright (c) 2022 Suffix Digital
 [MIT LICENCE](https://github.com/adeeteya/FlutterFurnitureApp/blob/master/LICENSE)
